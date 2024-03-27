@@ -1,0 +1,188 @@
+[
+  {
+    "ContainingType": "BookingSystem.Presintation.Endpoints.User.UserEntpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapUserEntpoints\u003Eb__0_3",
+    "RelativePath": "Users/ConfirmEmailAsync",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BookingSystem.Presintation.Endpoints.User.UserEntpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapUserEntpoints\u003Eb__0_7",
+    "RelativePath": "Users/DeleteUserAysnc",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BookingSystem.Presintation.Endpoints.User.UserEntpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapUserEntpoints\u003Eb__0_1",
+    "RelativePath": "Users/LoginAysnc",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "login",
+        "Type": "BookingSystem.DTOs.Authentication.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BookingSystem.DTOs.Authentication.AuthenticateResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BookingSystem.Presintation.Endpoints.User.UserEntpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapUserEntpoints\u003Eb__0_2",
+    "RelativePath": "Users/RefreshTokenAysnc",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "BookingSystem.DTOs.Authentication.AuthenticateResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BookingSystem.Presintation.Endpoints.User.UserEntpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapUserEntpoints\u003Eb__0_0",
+    "RelativePath": "Users/RegisterAysnc",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "register",
+        "Type": "BookingSystem.DTOs.Authentication.RegisterRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BookingSystem.DTOs.Authentication.AuthenticateResponse",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BookingSystem.Presintation.Endpoints.User.UserEntpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapUserEntpoints\u003Eb__0_6",
+    "RelativePath": "Users/ResetPasswordAysnc",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newPassword",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "code",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BookingSystem.Presintation.Endpoints.User.UserEntpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapUserEntpoints\u003Eb__0_4",
+    "RelativePath": "Users/RevokeTokenAysnc",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BookingSystem.Presintation.Endpoints.User.UserEntpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapUserEntpoints\u003Eb__0_5",
+    "RelativePath": "Users/SendResetPasswordCodeAsync",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]
