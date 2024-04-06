@@ -13,15 +13,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DTOs", "DTOs", "{AD9B4B71-2
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presintation", "Presintation", "{22689923-38DD-4DBD-8FAC-8924ADDCF8A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingSystem.Application", "BookingSystem.Application\BookingSystem.Application.csproj", "{6AD8BB77-33DF-4D48-9AB1-BB85DE668E67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingSystem.Application", "BookingSystem.Application\BookingSystem.Application.csproj", "{6AD8BB77-33DF-4D48-9AB1-BB85DE668E67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingSystem.Domain", "BookingSystem.Domain\BookingSystem.Domain.csproj", "{C45442A3-EAF2-45D8-A744-2FD5554F94BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingSystem.Domain", "BookingSystem.Domain\BookingSystem.Domain.csproj", "{C45442A3-EAF2-45D8-A744-2FD5554F94BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingSystem.DTOs", "BookingSystem.DTOs\BookingSystem.DTOs.csproj", "{739952EE-E9C1-464B-9100-3FE5B9693BB3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingSystem.DTOs", "BookingSystem.DTOs\BookingSystem.DTOs.csproj", "{739952EE-E9C1-464B-9100-3FE5B9693BB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingSystem.Presintation", "BookingSystem.Presintation\BookingSystem.Presintation.csproj", "{A71109E9-9908-4D8F-B636-62ABD08FA264}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingSystem.Presintation", "BookingSystem.Presintation\BookingSystem.Presintation.csproj", "{A71109E9-9908-4D8F-B636-62ABD08FA264}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingSystem.Presistance", "BookingSystem.Presistance\BookingSystem.Presistance.csproj", "{B032F218-0C1F-481E-B56C-4ADD2FCF3206}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookingSystem.Presistance", "BookingSystem.Presistance\BookingSystem.Presistance.csproj", "{B032F218-0C1F-481E-B56C-4ADD2FCF3206}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -9,3 +9,4 @@ E:\Projects\BookingSystem\BookingSystem.DTOs\obj\Debug\net8.0\BookingSystem.DTOs
 E:\Projects\BookingSystem\BookingSystem.DTOs\obj\Debug\net8.0\refint\BookingSystem.DTOs.dll
 E:\Projects\BookingSystem\BookingSystem.DTOs\obj\Debug\net8.0\BookingSystem.DTOs.pdb
 E:\Projects\BookingSystem\BookingSystem.DTOs\obj\Debug\net8.0\ref\BookingSystem.DTOs.dll
+E:\Projects\BookingSystem\BookingSystem.DTOs\obj\Debug\net8.0\BookingSystem.DTOs.sourcelink.json

@@ -156,3 +156,4 @@ E:\Projects\BookingSystem\BookingSystem.Presintation\obj\Debug\net8.0\refint\Boo
 E:\Projects\BookingSystem\BookingSystem.Presintation\obj\Debug\net8.0\BookingSystem.Presintation.pdb
 E:\Projects\BookingSystem\BookingSystem.Presintation\obj\Debug\net8.0\BookingSystem.Presintation.genruntimeconfig.cache
 E:\Projects\BookingSystem\BookingSystem.Presintation\obj\Debug\net8.0\ref\BookingSystem.Presintation.dll
+E:\Projects\BookingSystem\BookingSystem.Presintation\obj\Debug\net8.0\BookingSystem.Presintation.sourcelink.json

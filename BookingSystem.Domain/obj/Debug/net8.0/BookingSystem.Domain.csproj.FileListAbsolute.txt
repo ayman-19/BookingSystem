@@ -10,3 +10,4 @@ E:\Projects\BookingSystem\BookingSystem.Domain\obj\Debug\net8.0\BookingSystem.Do
 E:\Projects\BookingSystem\BookingSystem.Domain\obj\Debug\net8.0\refint\BookingSystem.Domain.dll
 E:\Projects\BookingSystem\BookingSystem.Domain\obj\Debug\net8.0\BookingSystem.Domain.pdb
 E:\Projects\BookingSystem\BookingSystem.Domain\obj\Debug\net8.0\ref\BookingSystem.Domain.dll
+E:\Projects\BookingSystem\BookingSystem.Domain\obj\Debug\net8.0\BookingSystem.Domain.sourcelink.json

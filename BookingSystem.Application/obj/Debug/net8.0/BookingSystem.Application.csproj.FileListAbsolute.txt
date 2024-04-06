@@ -15,3 +15,4 @@ E:\Projects\BookingSystem\BookingSystem.Application\obj\Debug\net8.0\BookingSyst
 E:\Projects\BookingSystem\BookingSystem.Application\obj\Debug\net8.0\refint\BookingSystem.Application.dll
 E:\Projects\BookingSystem\BookingSystem.Application\obj\Debug\net8.0\BookingSystem.Application.pdb
 E:\Projects\BookingSystem\BookingSystem.Application\obj\Debug\net8.0\ref\BookingSystem.Application.dll
+E:\Projects\BookingSystem\BookingSystem.Application\obj\Debug\net8.0\BookingSystem.Application.sourcelink.json

@@ -17,3 +17,4 @@ E:\Projects\BookingSystem\BookingSystem.Presistance\obj\Debug\net8.0\BookingSyst
 E:\Projects\BookingSystem\BookingSystem.Presistance\obj\Debug\net8.0\refint\BookingSystem.Presistance.dll
 E:\Projects\BookingSystem\BookingSystem.Presistance\obj\Debug\net8.0\BookingSystem.Presistance.pdb
 E:\Projects\BookingSystem\BookingSystem.Presistance\obj\Debug\net8.0\ref\BookingSystem.Presistance.dll
+E:\Projects\BookingSystem\BookingSystem.Presistance\obj\Debug\net8.0\BookingSystem.Presistance.sourcelink.json
