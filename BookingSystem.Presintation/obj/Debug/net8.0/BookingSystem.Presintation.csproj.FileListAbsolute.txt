@@ -142,6 +142,7 @@ E:\Projects\BookingSystem\BookingSystem.Presintation\obj\Debug\net8.0\BookingSys
 E:\Projects\BookingSystem\BookingSystem.Presintation\obj\Debug\net8.0\BookingSystem.Presintation.csproj.CoreCompileInputs.cache
 E:\Projects\BookingSystem\BookingSystem.Presintation\obj\Debug\net8.0\BookingSystem.Presintation.MvcApplicationPartsAssemblyInfo.cs
 E:\Projects\BookingSystem\BookingSystem.Presintation\obj\Debug\net8.0\BookingSystem.Presintation.MvcApplicationPartsAssemblyInfo.cache
+E:\Projects\BookingSystem\BookingSystem.Presintation\obj\Debug\net8.0\BookingSystem.Presintation.sourcelink.json
 E:\Projects\BookingSystem\BookingSystem.Presintation\obj\Debug\net8.0\staticwebassets.build.json
 E:\Projects\BookingSystem\BookingSystem.Presintation\obj\Debug\net8.0\staticwebassets.development.json
 E:\Projects\BookingSystem\BookingSystem.Presintation\obj\Debug\net8.0\staticwebassets\msbuild.BookingSystem.Presintation.Microsoft.AspNetCore.StaticWebAssets.props
@@ -156,4 +157,3 @@ E:\Projects\BookingSystem\BookingSystem.Presintation\obj\Debug\net8.0\refint\Boo
 E:\Projects\BookingSystem\BookingSystem.Presintation\obj\Debug\net8.0\BookingSystem.Presintation.pdb
 E:\Projects\BookingSystem\BookingSystem.Presintation\obj\Debug\net8.0\BookingSystem.Presintation.genruntimeconfig.cache
 E:\Projects\BookingSystem\BookingSystem.Presintation\obj\Debug\net8.0\ref\BookingSystem.Presintation.dll
-E:\Projects\BookingSystem\BookingSystem.Presintation\obj\Debug\net8.0\BookingSystem.Presintation.sourcelink.json

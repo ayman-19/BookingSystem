@@ -66,7 +66,7 @@ namespace BookingSystem.Presistance.Authentication
             var token = await CreateAccessTokenAsync(user);
             var refToken = CreateRefreshToken();
             refToken.AccessToken = token;
-            refToken.AccessTokenExpiration = DateTime.Now.AddHours(_jWt.AccessTokenExiretionDate);
+            refToken.AccessTokenExpiration = DateTime.Now.AddDays(_jWt.AccessTokenExiretionDate);
             user.RefreshTokens.Add(refToken);
             await _userManager.UpdateAsync(user);
             var tokenConfirmEmail = await _userManager.GenerateEmailConfirmationTokenAsync(user);
@@ -97,7 +97,7 @@ namespace BookingSystem.Presistance.Authentication
                 var accessToken = await CreateAccessTokenAsync(user);
                 var refToken = CreateRefreshToken();
                 refToken.AccessToken = accessToken;
-                refToken.AccessTokenExpiration = DateTime.Now.AddHours(_jWt.AccessTokenExiretionDate);
+                refToken.AccessTokenExpiration = DateTime.Now.AddDays(_jWt.AccessTokenExiretionDate);
                 user.RefreshTokens.Add(refToken);
                 await _userManager.UpdateAsync(user);
                 await _unitOfWork.CommitAsync();
@@ -137,7 +137,7 @@ namespace BookingSystem.Presistance.Authentication
             var accessToken = await CreateAccessTokenAsync(user);
             var refToken = CreateRefreshToken();
             refToken.AccessToken = accessToken;
-            refToken.AccessTokenExpiration = DateTime.Now.AddHours(_jWt.AccessTokenExiretionDate);
+            refToken.AccessTokenExpiration = DateTime.Now.AddDays(_jWt.AccessTokenExiretionDate);
             user.RefreshTokens.Add(refToken);
             await _unitOfWork.SaveChanges();
             await _unitOfWork.CommitAsync();
@@ -199,7 +199,8 @@ namespace BookingSystem.Presistance.Authentication
                 new Claim(ClaimTypes.Name, user.Name),
                 new Claim(ClaimTypes.PrimarySid, user.Id),
                 new Claim(ClaimTypes.Email, user.Email),
-                new Claim("Permission", "Per")
+                new Claim(CustomClaims.Permission, "Per"),
+                new Claim(CustomClaims.ExpireAccessTokenOn, $"{DateTime.Now.AddDays(_jWt.AccessTokenExiretionDate)}")
             };
             roleClaime.AddRange(userClaims);
             roleClaime.AddRange(userClaim);
@@ -208,7 +209,7 @@ namespace BookingSystem.Presistance.Authentication
             {
                 Audience = _jWt.Audience,
                 Issuer = _jWt.Issuer,
-                Expires = DateTime.Now.AddHours(_jWt.AccessTokenExiretionDate),
+                //Expires = DateTime.Now.AddMinutes(_jWt.AccessTokenExiretionDate),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jWt.Key)), SecurityAlgorithms.HmacSha256),
                 Subject = new ClaimsIdentity(roleClaime)
             };
