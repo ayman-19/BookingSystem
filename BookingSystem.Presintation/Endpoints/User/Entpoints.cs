@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BookingSystem.Presintation.Endpoints.User
 {
-    public static class UserEntpoints
+    public static class Entpoints
     {
         public static void MapUserEntpoints(this IEndpointRouteBuilder builder)
         {

@@ -1,6 +1,125 @@
 [
   {
-    "ContainingType": "BookingSystem.Presintation.Endpoints.User.UserEntpoints\u002B\u003C\u003Ec",
+    "ContainingType": "BookingSystem.Presintation.Endpoints.Rooms.Endpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapRoomEntpoints\u003Eb__0_1",
+    "RelativePath": "Rooms/CreateAsync",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "BookingSystem.DTOs.Room.Command",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BookingSystem.DTOs.Room.Query",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BookingSystem.Presintation.Endpoints.Rooms.Endpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapRoomEntpoints\u003Eb__0_2",
+    "RelativePath": "Rooms/DeleteAsync/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BookingSystem.DTOs.Room.Query",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BookingSystem.Presintation.Endpoints.Rooms.Endpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapRoomEntpoints\u003Eb__0_0",
+    "RelativePath": "Rooms/GatAllAsync",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[BookingSystem.DTOs.Room.Query, BookingSystem.DTOs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BookingSystem.Presintation.Endpoints.Rooms.Endpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapRoomEntpoints\u003Eb__0_4",
+    "RelativePath": "Rooms/GatByIdAsync/{id}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BookingSystem.DTOs.Room.Query",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BookingSystem.Presintation.Endpoints.Rooms.Endpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapRoomEntpoints\u003Eb__0_3",
+    "RelativePath": "Rooms/UpdateAsync/{id}",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "BookingSystem.DTOs.Room.Command",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BookingSystem.DTOs.Room.Query",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BookingSystem.Presintation.Endpoints.User.Entpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapUserEntpoints\u003Eb__0_3",
     "RelativePath": "Users/ConfirmEmailAsync",
     "HttpMethod": "GET",
@@ -29,7 +148,7 @@
     ]
   },
   {
-    "ContainingType": "BookingSystem.Presintation.Endpoints.User.UserEntpoints\u002B\u003C\u003Ec",
+    "ContainingType": "BookingSystem.Presintation.Endpoints.User.Entpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapUserEntpoints\u003Eb__0_7",
     "RelativePath": "Users/DeleteUserAysnc",
     "HttpMethod": "DELETE",
@@ -51,7 +170,7 @@
     ]
   },
   {
-    "ContainingType": "BookingSystem.Presintation.Endpoints.User.UserEntpoints\u002B\u003C\u003Ec",
+    "ContainingType": "BookingSystem.Presintation.Endpoints.User.Entpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapUserEntpoints\u003Eb__0_1",
     "RelativePath": "Users/LoginAysnc",
     "HttpMethod": "POST",
@@ -75,7 +194,7 @@
     ]
   },
   {
-    "ContainingType": "BookingSystem.Presintation.Endpoints.User.UserEntpoints\u002B\u003C\u003Ec",
+    "ContainingType": "BookingSystem.Presintation.Endpoints.User.Entpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapUserEntpoints\u003Eb__0_2",
     "RelativePath": "Users/RefreshTokenAysnc",
     "HttpMethod": "GET",
@@ -93,7 +212,7 @@
     ]
   },
   {
-    "ContainingType": "BookingSystem.Presintation.Endpoints.User.UserEntpoints\u002B\u003C\u003Ec",
+    "ContainingType": "BookingSystem.Presintation.Endpoints.User.Entpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapUserEntpoints\u003Eb__0_0",
     "RelativePath": "Users/RegisterAysnc",
     "HttpMethod": "POST",
@@ -117,7 +236,7 @@
     ]
   },
   {
-    "ContainingType": "BookingSystem.Presintation.Endpoints.User.UserEntpoints\u002B\u003C\u003Ec",
+    "ContainingType": "BookingSystem.Presintation.Endpoints.User.Entpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapUserEntpoints\u003Eb__0_6",
     "RelativePath": "Users/ResetPasswordAysnc",
     "HttpMethod": "GET",
@@ -146,7 +265,7 @@
     ]
   },
   {
-    "ContainingType": "BookingSystem.Presintation.Endpoints.User.UserEntpoints\u002B\u003C\u003Ec",
+    "ContainingType": "BookingSystem.Presintation.Endpoints.User.Entpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapUserEntpoints\u003Eb__0_4",
     "RelativePath": "Users/RevokeTokenAysnc",
     "HttpMethod": "GET",
@@ -162,7 +281,7 @@
     ]
   },
   {
-    "ContainingType": "BookingSystem.Presintation.Endpoints.User.UserEntpoints\u002B\u003C\u003Ec",
+    "ContainingType": "BookingSystem.Presintation.Endpoints.User.Entpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapUserEntpoints\u003Eb__0_5",
     "RelativePath": "Users/SendResetPasswordCodeAsync",
     "HttpMethod": "GET",
