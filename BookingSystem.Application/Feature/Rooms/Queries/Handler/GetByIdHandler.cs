@@ -6,7 +6,7 @@ using MediatR;
 
 namespace BookingSystem.Application.Feature.Rooms.Queries.Handler
 {
-    public class GetByIdHandler : IRequestHandler<GetByIdRequest, Query>
+    public class GetByIdHandler : IRequestHandler<GetByIdRequest, RoomQuery>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -17,6 +17,6 @@ namespace BookingSystem.Application.Feature.Rooms.Queries.Handler
             _mapper = mapper;
         }
 
-        public async Task<Query> Handle(GetByIdRequest request, CancellationToken cancellationToken) => _mapper.Map<Query>(await _unitOfWork.Rooms.GetAsync(r => r.Id == request.id));
+        public async Task<RoomQuery> Handle(GetByIdRequest request, CancellationToken cancellationToken) => _mapper.Map<RoomQuery>(await _unitOfWork.Rooms.GetAsync(r => r.Id == request.id));
     }
 }

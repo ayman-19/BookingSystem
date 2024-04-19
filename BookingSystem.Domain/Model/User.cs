@@ -1,5 +1,6 @@
 ﻿using BookingSystem.Domain.SoftDeletable;
 using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BookingSystem.Domain.Model
 {
@@ -9,8 +10,10 @@ namespace BookingSystem.Domain.Model
         public string Address { get; set; }
         public DateTime BirthDate { get; set; }
         public bool IsDeleted { get; set; }
+        public int? ReservationId { get; set; }
         public string Code { get; set; } = string.Empty;
         public DateTime DeletedOn { get; set; }
+        [ForeignKey(nameof(ReservationId))]
         public Reservation? Reservation { get; set; }
         public List<RefreshToken> RefreshTokens { get; set; } = new List<RefreshToken>();
     }

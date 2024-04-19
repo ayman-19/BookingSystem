@@ -3,5 +3,5 @@ using MediatR;
 
 namespace BookingSystem.Application.Feature.Rooms.Queries.Request
 {
-    public record GetByIdRequest(int id) : IRequest<Query>;
+    public record GetByIdRequest(int id) : IRequest<RoomQuery>;
 }

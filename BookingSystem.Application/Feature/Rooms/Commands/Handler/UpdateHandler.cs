@@ -6,7 +6,7 @@ using MediatR;
 
 namespace BookingSystem.Application.Feature.Rooms.Commands.Handler
 {
-    public class UpdateHandler : IRequestHandler<UpdateRequest, Query>
+    public class UpdateHandler : IRequestHandler<UpdateRequest, RoomQuery>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -15,7 +15,7 @@ namespace BookingSystem.Application.Feature.Rooms.Commands.Handler
             _mapper = mapper;
             _unitOfWork = unitOfWork;
         }
-        public async Task<Query> Handle(UpdateRequest request, CancellationToken cancellationToken)
+        public async Task<RoomQuery> Handle(UpdateRequest request, CancellationToken cancellationToken)
         {
             try
             {
@@ -24,12 +24,12 @@ namespace BookingSystem.Application.Feature.Rooms.Commands.Handler
                 await _unitOfWork.Rooms.UpdateAsync(updateRoom);
                 await _unitOfWork.SaveChanges();
                 await _unitOfWork.CommitAsync();
-                return _mapper.Map<Query>(updateRoom);
+                return _mapper.Map<RoomQuery>(updateRoom);
             }
             catch
             {
                 await _unitOfWork.RollbackAsync();
-                return new Query();
+                return new RoomQuery();
             }
         }
     }

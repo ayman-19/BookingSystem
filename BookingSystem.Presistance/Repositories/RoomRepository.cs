@@ -13,8 +13,14 @@ namespace BookingSystem.Presistance.Repositories
         {
             _context = context;
         }
+        public async Task MakeReservedAsync(string roomId, int reserveId)
+        {
+            int id = int.Parse(roomId);
+            await _context.Rooms
+                    .Where(u => u.Id == id)
+                    .ExecuteUpdateAsync(exc => exc.SetProperty(prop => prop.ReservationId, reserveId));
+        }
 
-        public async Task<int> GetRoomIdByCode(string code) => await _context.Rooms.Where(r => r.Code == code).Select(r => r.Id).FirstAsync();
         public async Task MakeRoomIsBookedById(int roomId) =>
             await _context.Rooms.Where(r => r.Id == roomId).ExecuteUpdateAsync(room => room.SetProperty(prop => prop.IsBooked, true));
     }

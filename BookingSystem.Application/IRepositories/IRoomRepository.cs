@@ -2,9 +2,8 @@
 
 namespace BookingSystem.Application.IRepositories
 {
-    public interface IRoomRepository : IRepository<Room>
+    public interface IRoomRepository : IRepository<Room>, ISharedBetweenUserAndRoomRepository
     {
-        Task<int> GetRoomIdByCode(string code);
         Task MakeRoomIsBookedById(int roomId);
     }
 }

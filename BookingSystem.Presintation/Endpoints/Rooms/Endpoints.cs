@@ -11,9 +11,9 @@ namespace BookingSystem.Presintation.Endpoints.Rooms
         {
             var map = builder.MapGroup("Rooms");
             map.MapGet("GatAllAsync", async (ISender sender) => await sender.Send(new GetAllRequest()));
-            map.MapPost("CreateAsync", async (Command command, ISender sender) => await sender.Send(new CreateRequest(command)));
+            map.MapPost("CreateAsync", async (RoomCommand command, ISender sender) => await sender.Send(new CreateRequest(command)));
             map.MapDelete("DeleteAsync/{id}", async (int id, ISender sender) => await sender.Send(new DeleteRequest(id)));
-            map.MapPut("UpdateAsync/{id}", async (int id, Command command, ISender sender) => await sender.Send(new UpdateRequest(id, command)));
+            map.MapPut("UpdateAsync/{id}", async (int id, RoomCommand command, ISender sender) => await sender.Send(new UpdateRequest(id, command)));
             map.MapGet("GatByIdAsync/{id}", async (int id, ISender sender) => await sender.Send(new GetByIdRequest(id)));
 
         }

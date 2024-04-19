@@ -3,5 +3,5 @@ using MediatR;
 
 namespace BookingSystem.Application.Feature.Rooms.Commands.Request
 {
-    public record CreateRequest(Command Command) : IRequest<Query>;
+    public record CreateRequest(RoomCommand Command) : IRequest<RoomQuery>;
 }

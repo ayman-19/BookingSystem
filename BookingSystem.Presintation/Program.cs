@@ -1,5 +1,6 @@
 using BookingSystem.Application.Dependancies;
 using BookingSystem.Application.Middleware;
+using BookingSystem.Presintation.Endpoints.Reservations;
 using BookingSystem.Presintation.Endpoints.Rooms;
 using BookingSystem.Presintation.Endpoints.User;
 using BookingSystem.Presistance.Dependancies;
@@ -90,6 +91,7 @@ namespace BookingSystem.Presintation
             app.UseMiddleware<CustomMiddleware>();
             app.MapUserEntpoints();
             app.MapRoomEntpoints();
+            app.MapReservationEntpoints();
             app.UseAuthorization();
             app.MapControllers();
 

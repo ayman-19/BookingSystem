@@ -3,5 +3,5 @@ using MediatR;
 
 namespace BookingSystem.Application.Feature.Rooms.Queries.Request
 {
-    public record GetAllRequest : IRequest<List<Query>>;
+    public record GetAllRequest : IRequest<List<RoomQuery>>;
 }

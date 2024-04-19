@@ -1,9 +1,8 @@
 ﻿namespace BookingSystem.DTOs.Room
 {
-    public record Query
+    public class RoomCommand
     {
         public string Code { get; set; }
-        public bool IsBooked { get; set; }
         public int Floor { get; set; }
     }
 }

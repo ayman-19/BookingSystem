@@ -6,7 +6,7 @@ using MediatR;
 
 namespace BookingSystem.Application.Feature.Rooms.Commands.Handler
 {
-    public class DeleteHandler : IRequestHandler<DeleteRequest, Query>
+    public class DeleteHandler : IRequestHandler<DeleteRequest, RoomQuery>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -15,7 +15,7 @@ namespace BookingSystem.Application.Feature.Rooms.Commands.Handler
             _mapper = mapper;
             _unitOfWork = unitOfWork;
         }
-        public async Task<Query> Handle(DeleteRequest request, CancellationToken cancellationToken)
+        public async Task<RoomQuery> Handle(DeleteRequest request, CancellationToken cancellationToken)
         {
             try
             {
@@ -23,12 +23,12 @@ namespace BookingSystem.Application.Feature.Rooms.Commands.Handler
                 await _unitOfWork.Rooms.DeleteAsync(room);
                 await _unitOfWork.SaveChanges();
                 await _unitOfWork.CommitAsync();
-                return _mapper.Map<Query>(room);
+                return _mapper.Map<RoomQuery>(room);
             }
             catch
             {
                 await _unitOfWork.RollbackAsync();
-                return new Query();
+                return new RoomQuery();
             }
         }
     }

@@ -12,8 +12,8 @@ namespace BookingSystem.Application.Mapping.Rooms
         }
         private void Map()
         {
-            CreateMap<Room, Query>().ReverseMap();
-            CreateMap<Room, Command>().ReverseMap();
+            CreateMap<Room, RoomQuery>().ReverseMap();
+            CreateMap<Room, RoomCommand>().ReverseMap();
         }
     }
 }

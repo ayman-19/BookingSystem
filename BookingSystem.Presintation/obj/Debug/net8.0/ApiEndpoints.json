@@ -1,5 +1,82 @@
 [
   {
+    "ContainingType": "BookingSystem.Presintation.Endpoints.Reservations.Endpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapReservationEntpoints\u003Eb__0_0",
+    "RelativePath": "Reservations/CreateAsync",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "BookingSystem.DTOs.Reservation.ReservationCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BookingSystem.DTOs.Reservation.ReservationQuery",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BookingSystem.Presintation.Endpoints.Reservations.Endpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapReservationEntpoints\u003Eb__0_2",
+    "RelativePath": "Reservations/DeleteAsync/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BookingSystem.DTOs.Reservation.ReservationQuery",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BookingSystem.Presintation.Endpoints.Reservations.Endpoints\u002B\u003C\u003Ec",
+    "Method": "\u003CMapReservationEntpoints\u003Eb__0_1",
+    "RelativePath": "Reservations/UpdateAsync/{id}",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "BookingSystem.DTOs.Reservation.ReservationCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BookingSystem.DTOs.Reservation.ReservationQuery",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "BookingSystem.Presintation.Endpoints.Rooms.Endpoints\u002B\u003C\u003Ec",
     "Method": "\u003CMapRoomEntpoints\u003Eb__0_1",
     "RelativePath": "Rooms/CreateAsync",
@@ -9,13 +86,13 @@
     "Parameters": [
       {
         "Name": "command",
-        "Type": "BookingSystem.DTOs.Room.Command",
+        "Type": "BookingSystem.DTOs.Room.RoomCommand",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "BookingSystem.DTOs.Room.Query",
+        "Type": "BookingSystem.DTOs.Room.RoomQuery",
         "MediaTypes": [
           "application/json"
         ],
@@ -39,7 +116,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "BookingSystem.DTOs.Room.Query",
+        "Type": "BookingSystem.DTOs.Room.RoomQuery",
         "MediaTypes": [
           "application/json"
         ],
@@ -57,7 +134,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[BookingSystem.DTOs.Room.Query, BookingSystem.DTOs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[BookingSystem.DTOs.Room.RoomQuery, BookingSystem.DTOs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "application/json"
         ],
@@ -81,7 +158,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "BookingSystem.DTOs.Room.Query",
+        "Type": "BookingSystem.DTOs.Room.RoomQuery",
         "MediaTypes": [
           "application/json"
         ],
@@ -104,13 +181,13 @@
       },
       {
         "Name": "command",
-        "Type": "BookingSystem.DTOs.Room.Command",
+        "Type": "BookingSystem.DTOs.Room.RoomCommand",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "BookingSystem.DTOs.Room.Query",
+        "Type": "BookingSystem.DTOs.Room.RoomQuery",
         "MediaTypes": [
           "application/json"
         ],

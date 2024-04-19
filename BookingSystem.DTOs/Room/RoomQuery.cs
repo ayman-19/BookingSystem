@@ -1,8 +1,10 @@
 ﻿namespace BookingSystem.DTOs.Room
 {
-    public class Command
+    public record RoomQuery
     {
+        public int MyProperty { get; set; }
         public string Code { get; set; }
+        public bool IsBooked { get; set; }
         public int Floor { get; set; }
     }
 }
