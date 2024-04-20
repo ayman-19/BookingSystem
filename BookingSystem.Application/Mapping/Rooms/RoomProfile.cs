@@ -12,7 +12,7 @@ namespace BookingSystem.Application.Mapping.Rooms
         }
         private void Map()
         {
-            CreateMap<Room, RoomQuery>().ReverseMap();
+            CreateMap<Room, RoomQuery>().ForMember(p => p.Floor, mce => mce.MapFrom(src => src.Floor.Number)).ReverseMap();
             CreateMap<Room, RoomCommand>().ReverseMap();
         }
     }

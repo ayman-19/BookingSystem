@@ -38,6 +38,9 @@ namespace BookingSystem.Presistance.Data
         }
         public DbSet<Reservation> Reservations { get; set; }
         public DbSet<Room> Rooms { get; set; }
-
+        public DbSet<Floor> Floors { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Food> Foods { get; set; }
+        public DbSet<Product> Products { get; set; }
     }
 }

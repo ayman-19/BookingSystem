@@ -23,9 +23,10 @@ namespace BookingSystem.Application.Feature.Rooms.Commands.Validation
                 .NotEmpty().WithMessage("Code Not Empty")
                 .NotNull().WithMessage("Code Not Null");
 
-            RuleFor(r => r.Command.Floor)
+            RuleFor(r => r.Command.FloorId)
                 .NotEmpty().WithMessage("Floor Not Empty")
-                .NotNull().WithMessage("Floor Not Null");
+                .NotNull().WithMessage("Floor Not Null")
+                    .MustAsync(async (id, CancellationToken) => await _unitOfWork.Floors.IsAnyExistAsync(r => r.Id == id)).WithMessage("Floor Is Not Exist");
 
             RuleFor(r => r)
               .MustAsync(async (req, CancellationToken) => !await _unitOfWork.Rooms.IsAnyExistAsync(r => r.Code == req.Command.Code && r.Id != req.id)).WithMessage("Code Is Exist");

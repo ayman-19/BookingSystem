@@ -36,6 +36,10 @@ namespace BookingSystem.Presistance.Dependancies
             services.AddScoped<IReservationRepository, ReservationRepository>();
             services.AddScoped<IRoomRepository, RoomRepository>();
             services.AddScoped<ISharedBetweenUserAndRoomRepository, RoomRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IFoodRepository, FoodRepository>();
+            services.AddScoped<IFloorRepository, FloorRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IAccount, Account>();
             services.AddScoped(typeof(Cookie));
             services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<BookingDbContext>().AddDefaultTokenProviders();

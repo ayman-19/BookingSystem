@@ -17,6 +17,6 @@ namespace BookingSystem.Application.Feature.Rooms.Queries.Handler
             _mapper = mapper;
         }
         public async Task<List<RoomQuery>> Handle(GetAllRequest request, CancellationToken cancellationToken)
-            => _mapper.ProjectTo<RoomQuery>(await _unitOfWork.Rooms.GetAllAsync()).ToList();
+            => _mapper.ProjectTo<RoomQuery>(await _unitOfWork.Rooms.GetAllAsync(includes: ["Floor"])).ToList();
     }
 }

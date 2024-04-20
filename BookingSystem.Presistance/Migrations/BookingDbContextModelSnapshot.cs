@@ -22,6 +22,86 @@ namespace BookingSystem.Presistance.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("BookingSystem.Domain.Model.Category", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("BookingSystem.Domain.Model.Floor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Number")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Floors");
+                });
+
+            modelBuilder.Entity("BookingSystem.Domain.Model.Food", b =>
+                {
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RoomId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Amount")
+                        .HasColumnType("int");
+
+                    b.HasKey("ProductId", "RoomId");
+
+                    b.HasIndex("RoomId");
+
+                    b.ToTable("Foods");
+                });
+
+            modelBuilder.Entity("BookingSystem.Domain.Model.Product", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("Products");
+                });
+
             modelBuilder.Entity("BookingSystem.Domain.Model.Reservation", b =>
                 {
                     b.Property<int>("Id")
@@ -46,9 +126,6 @@ namespace BookingSystem.Presistance.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<int>("PersonCount")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.ToTable("Reservations");
@@ -66,7 +143,7 @@ namespace BookingSystem.Presistance.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Floor")
+                    b.Property<int>("FloorId")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsBooked")
@@ -76,6 +153,8 @@ namespace BookingSystem.Presistance.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("FloorId");
 
                     b.HasIndex("ReservationId");
 
@@ -202,15 +281,15 @@ namespace BookingSystem.Presistance.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "de33f954-210e-4339-adce-2db7e861599d",
-                            ConcurrencyStamp = "ddbfa06c-21b1-4dd0-b3fd-eb6d40f7ff0c",
+                            Id = "ae3f4330-f1ba-4973-88b9-dc8dec714e15",
+                            ConcurrencyStamp = "91be9c30-f1ad-49e9-9d8a-f38b1bea5f7b",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "5fd72153-bf77-4a24-b26f-d1a56649880a",
-                            ConcurrencyStamp = "dc3b8184-e40f-450b-96e5-c10898d2efa5",
+                            Id = "e92e1e7a-1432-4908-84de-1ff331dce60d",
+                            ConcurrencyStamp = "0d19be3f-82d2-4fc9-81e7-2443e70b8529",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -322,11 +401,49 @@ namespace BookingSystem.Presistance.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("BookingSystem.Domain.Model.Food", b =>
+                {
+                    b.HasOne("BookingSystem.Domain.Model.Product", "Product")
+                        .WithMany("Foods")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BookingSystem.Domain.Model.Room", "Room")
+                        .WithMany("Foods")
+                        .HasForeignKey("RoomId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("Room");
+                });
+
+            modelBuilder.Entity("BookingSystem.Domain.Model.Product", b =>
+                {
+                    b.HasOne("BookingSystem.Domain.Model.Category", "Category")
+                        .WithMany("Products")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+                });
+
             modelBuilder.Entity("BookingSystem.Domain.Model.Room", b =>
                 {
+                    b.HasOne("BookingSystem.Domain.Model.Floor", "Floor")
+                        .WithMany("Rooms")
+                        .HasForeignKey("FloorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("BookingSystem.Domain.Model.Reservation", "Reservation")
                         .WithMany("Rooms")
                         .HasForeignKey("ReservationId");
+
+                    b.Navigation("Floor");
 
                     b.Navigation("Reservation");
                 });
@@ -432,11 +549,31 @@ namespace BookingSystem.Presistance.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("BookingSystem.Domain.Model.Category", b =>
+                {
+                    b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("BookingSystem.Domain.Model.Floor", b =>
+                {
+                    b.Navigation("Rooms");
+                });
+
+            modelBuilder.Entity("BookingSystem.Domain.Model.Product", b =>
+                {
+                    b.Navigation("Foods");
+                });
+
             modelBuilder.Entity("BookingSystem.Domain.Model.Reservation", b =>
                 {
                     b.Navigation("Rooms");
 
                     b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("BookingSystem.Domain.Model.Room", b =>
+                {
+                    b.Navigation("Foods");
                 });
 #pragma warning restore 612, 618
         }

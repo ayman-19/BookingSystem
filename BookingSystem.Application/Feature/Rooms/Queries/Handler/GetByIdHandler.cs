@@ -17,6 +17,6 @@ namespace BookingSystem.Application.Feature.Rooms.Queries.Handler
             _mapper = mapper;
         }
 
-        public async Task<RoomQuery> Handle(GetByIdRequest request, CancellationToken cancellationToken) => _mapper.Map<RoomQuery>(await _unitOfWork.Rooms.GetAsync(r => r.Id == request.id));
+        public async Task<RoomQuery> Handle(GetByIdRequest request, CancellationToken cancellationToken) => _mapper.Map<RoomQuery>(await _unitOfWork.Rooms.GetAsync(r => r.Id == request.id, includes: ["Floor"]));
     }
 }

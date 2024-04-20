@@ -20,6 +20,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Feature\Product\Commands\Handler\" />
+    <Folder Include="Feature\Product\Commands\Request\" />
+    <Folder Include="Feature\Product\Commands\Validation\" />
+    <Folder Include="Feature\Product\Queries\Handler\" />
+    <Folder Include="Feature\Product\Queries\Request\" />
+    <Folder Include="Feature\Product\Queries\Validation\" />
     <Folder Include="Feature\Reservation\Queries\Handler\" />
     <Folder Include="Feature\Reservation\Queries\Request\" />
     <Folder Include="Feature\Reservation\Queries\Validation\" />

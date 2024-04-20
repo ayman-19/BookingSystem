@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookingSystem.Presistance.Migrations
 {
     [DbContext(typeof(BookingDbContext))]
-    [Migration("20240418094854_editproperty")]
-    partial class editproperty
+    [Migration("20240419094633_first")]
+    partial class first
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,6 +24,22 @@ namespace BookingSystem.Presistance.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("BookingSystem.Domain.Model.Floor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Number")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Floor");
+                });
 
             modelBuilder.Entity("BookingSystem.Domain.Model.Reservation", b =>
                 {
@@ -49,9 +65,6 @@ namespace BookingSystem.Presistance.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<int>("PersonCount")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.ToTable("Reservations");
@@ -69,7 +82,7 @@ namespace BookingSystem.Presistance.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Floor")
+                    b.Property<int>("FloorId")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsBooked")
@@ -79,6 +92,8 @@ namespace BookingSystem.Presistance.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("FloorId");
 
                     b.HasIndex("ReservationId");
 
@@ -205,15 +220,15 @@ namespace BookingSystem.Presistance.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "de33f954-210e-4339-adce-2db7e861599d",
-                            ConcurrencyStamp = "ddbfa06c-21b1-4dd0-b3fd-eb6d40f7ff0c",
+                            Id = "798e91a2-6416-49c9-af28-61be04f1d598",
+                            ConcurrencyStamp = "21f4147f-b12e-4fb1-a0ea-f4e67aac8d9c",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "5fd72153-bf77-4a24-b26f-d1a56649880a",
-                            ConcurrencyStamp = "dc3b8184-e40f-450b-96e5-c10898d2efa5",
+                            Id = "31fd681b-5bfc-4ce6-a82f-5b12809f63bc",
+                            ConcurrencyStamp = "fa937799-c677-41d1-a3bb-f60505aa9916",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -327,9 +342,17 @@ namespace BookingSystem.Presistance.Migrations
 
             modelBuilder.Entity("BookingSystem.Domain.Model.Room", b =>
                 {
+                    b.HasOne("BookingSystem.Domain.Model.Floor", "Floor")
+                        .WithMany("Rooms")
+                        .HasForeignKey("FloorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("BookingSystem.Domain.Model.Reservation", "Reservation")
                         .WithMany("Rooms")
                         .HasForeignKey("ReservationId");
+
+                    b.Navigation("Floor");
 
                     b.Navigation("Reservation");
                 });
@@ -433,6 +456,11 @@ namespace BookingSystem.Presistance.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("BookingSystem.Domain.Model.Floor", b =>
+                {
+                    b.Navigation("Rooms");
                 });
 
             modelBuilder.Entity("BookingSystem.Domain.Model.Reservation", b =>

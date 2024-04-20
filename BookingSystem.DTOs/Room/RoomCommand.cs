@@ -3,6 +3,6 @@
     public class RoomCommand
     {
         public string Code { get; set; }
-        public int Floor { get; set; }
+        public int FloorId { get; set; }
     }
 }

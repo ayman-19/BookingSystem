@@ -13,6 +13,10 @@ namespace BookingSystem.Presistance.Repositories
         {
             _context = context;
         }
+
+        public async Task<int> GetRoomIdByUserIdAsync(string userId) =>
+            await _context.Users.Where(u => u.Id == userId).Include(u => u.Reservation).ThenInclude(r => r!.Rooms).Select(se => se.Reservation!.Rooms!.First().Id).FirstAsync();
+
         public async Task MakeReservedAsync(string roomId, int reserveId)
         {
             int id = int.Parse(roomId);
