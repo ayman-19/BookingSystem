@@ -199,7 +199,6 @@ namespace BookingSystem.Presistance.Authentication
                 new Claim(ClaimTypes.Name, user.Name),
                 new Claim(ClaimTypes.PrimarySid, user.Id),
                 new Claim(ClaimTypes.Email, user.Email),
-                new Claim(CustomClaims.Permission, "Per"),
                 new Claim(CustomClaims.ExpireAccessTokenOn, $"{DateTime.Now.AddDays(_jWt.AccessTokenExiretionDate)}")
             };
             roleClaime.AddRange(userClaims);
