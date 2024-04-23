@@ -5,6 +5,7 @@ using BookingSystem.DTOs.Authentication;
 using BookingSystem.Presistance.Helper;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -22,10 +23,11 @@ namespace BookingSystem.Presistance.Authentication
         private readonly IConfiguration _cofig;
         private readonly jWTSettings _jWt;
         private readonly UserManager<User> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
         private readonly SignInManager<User> _signInManager;
         private readonly IEmailService _emailService;
 
-        public Account(IUnitOfWork unitOfWork, UserManager<User> userManager, SignInManager<User> signInManager, IOptionsMonitor<jWTSettings> jWt, IEmailService emailService, IDataProtectionProvider provider, IConfiguration cofig)
+        public Account(IUnitOfWork unitOfWork, UserManager<User> userManager, SignInManager<User> signInManager, IOptionsMonitor<jWTSettings> jWt, IEmailService emailService, IDataProtectionProvider provider, IConfiguration cofig, RoleManager<IdentityRole> roleManager)
         {
             _unitOfWork = unitOfWork;
             _userManager = userManager;
@@ -34,6 +36,7 @@ namespace BookingSystem.Presistance.Authentication
             _emailService = emailService;
             _cofig = cofig;
             _dataProtector = provider.CreateProtector(_cofig["dataProtection:key"]);
+            _roleManager = roleManager;
         }
 
         public async Task<AuthenticateResponse> RegisterAsync(RegisterRequest registerRequest)
@@ -228,11 +231,71 @@ namespace BookingSystem.Presistance.Authentication
                 ExpireOn = DateTime.Now.AddMonths((int)_jWt.RefreshTokenExiretionDate)
             };
         }
-        public async Task DeleteUserAsync(string userId)
+        public async Task<int> DeleteUserAsync(string userId)
         {
-            await _unitOfWork.Users.DeleteAsync(await _unitOfWork.Users.GetAsync(u => u.Id == userId, astracking: true));
+            var user = await _unitOfWork.Users.GetAsync(u => u.Id == userId);
+            await _unitOfWork.Users.DeleteAsync(user);
             await _unitOfWork.SaveChanges();
             await _unitOfWork.CommitAsync();
+            return user.RoomId == default ? 0 : (int)user.RoomId!;
         }
+
+        public async Task<string> AddRoleAsync(string role)
+        {
+            if (await _roleManager.RoleExistsAsync(role))
+                return "Role Is Exist!";
+            var result = await _roleManager.CreateAsync(new IdentityRole
+            { ConcurrencyStamp = Guid.NewGuid().ToString(), Id = Guid.NewGuid().ToString(), Name = role, NormalizedName = role.ToUpper() });
+            if (!result.Succeeded)
+            {
+                var strBuilder = new StringBuilder();
+                foreach (var error in result.Errors)
+                    strBuilder.Append(error.Description);
+                return strBuilder.ToString();
+            }
+            return "Success";
+        }
+
+        public async Task<string> RemoveRoleAsync(string role)
+        {
+            if (!await _roleManager.RoleExistsAsync(role))
+                return "Role Not Exist";
+            var roleExist = await _roleManager.FindByNameAsync(role);
+            var result = await _roleManager.DeleteAsync(roleExist!);
+            if (!result.Succeeded)
+            {
+                var strBuilder = new StringBuilder();
+                foreach (var error in result.Errors)
+                    strBuilder.Append(error.Description);
+                return strBuilder.ToString();
+            }
+            return "Success";
+        }
+
+        public async Task<string> AddRoleToUserAsync(string role, string userId)
+        {
+            if (!await _roleManager.RoleExistsAsync(role))
+                return "Role Is Not Exist!";
+            if (!await _userManager.Users.AnyAsync(user => user.Id == userId))
+                return "User Is Not Exist!";
+            var user = await _userManager.FindByIdAsync(userId);
+            var result = await _userManager.AddToRoleAsync(user!, role);
+            if (!result.Succeeded)
+            {
+                var strBuilder = new StringBuilder();
+                foreach (var error in result.Errors)
+                    strBuilder.Append(error.Description);
+                return strBuilder.ToString();
+            }
+            await RevokeTokenAsync(await GetTokenForUser(userId));
+            return "Succcess And Please Login Again";
+        }
+
+        public Task AddPermissionAsync(string permission)
+        {
+            throw new NotImplementedException();
+        }
+        private async Task<string> GetTokenForUser(string userId)
+            => (await _unitOfWork.Users.GetAsync(u => u.Id == userId)).RefreshTokens.First(re => re.IsValid).AccessToken;
     }
 }

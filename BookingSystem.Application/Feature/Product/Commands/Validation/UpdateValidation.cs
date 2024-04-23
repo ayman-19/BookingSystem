@@ -17,7 +17,7 @@ namespace BookingSystem.Application.Feature.Product.Commands.Validation
         {
 
             RuleFor(r => r.id)
-               .NotEmpty().WithMessage("Id Not Empty")
+                .NotEmpty().WithMessage("Id Not Empty")
                 .NotNull().WithMessage("Id Not Null")
                 .MustAsync(async (id, CancellationToken) => await _unitOfWork.Products.IsAnyExistAsync(r => r.Id == id)).WithMessage("Product Is Not Exist");
 
@@ -26,12 +26,17 @@ namespace BookingSystem.Application.Feature.Product.Commands.Validation
                 .NotNull().WithMessage("Name Not Null");
 
             RuleFor(req => req.Command.Quantity)
-            .NotEmpty().WithMessage("Quantity Not Empty")
-            .NotNull().WithMessage("Quantity Not Null")
-            .GreaterThan(0).WithMessage("Quantity Not Nigetive");
+                .NotEmpty().WithMessage("Quantity Not Empty")
+                .NotNull().WithMessage("Quantity Not Null")
+                .GreaterThan(0).WithMessage("Quantity Not Nigetive");
+
+            RuleFor(req => req.Command.Price)
+                .NotEmpty().WithMessage("Price Not Empty")
+                .NotNull().WithMessage("Price Not Null")
+                .GreaterThan(0).WithMessage("Price Not Nigetive");
 
             RuleFor(req => req)
-               .MustAsync(async (command, CancellationToken) => !await _unitOfWork.Categories.IsAnyExistAsync(r => r.Name == command.Command.Name && r.Id == command.id)).WithMessage("Name Is Exist");
+                .MustAsync(async (command, CancellationToken) => !await _unitOfWork.Categories.IsAnyExistAsync(r => r.Name == command.Command.Name && r.Id == command.id)).WithMessage("Name Is Exist");
 
             RuleFor(req => req.Command.CategoryId)
                 .NotEmpty().WithMessage("Category Not Empty")

@@ -14,5 +14,6 @@ namespace BookingSystem.Domain.Model
         [ForeignKey(nameof(ReservationId))]
         public Reservation? Reservation { get; set; }
         public List<Food>? Foods { get; set; }
+        public User? User { get; set; }
     }
 }

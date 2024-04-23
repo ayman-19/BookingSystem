@@ -24,7 +24,9 @@ namespace BookingSystem.Application.Feature.Rooms.Commands.Handler
                 await _unitOfWork.Rooms.UpdateAsync(updateRoom);
                 await _unitOfWork.SaveChanges();
                 await _unitOfWork.CommitAsync();
-                return _mapper.Map<RoomQuery>(updateRoom);
+                var response = _mapper.Map<RoomQuery>(updateRoom);
+                response.Floor = await _unitOfWork.Floors.GetNumberAsync(request.Command.FloorId);
+                return response;
             }
             catch
             {

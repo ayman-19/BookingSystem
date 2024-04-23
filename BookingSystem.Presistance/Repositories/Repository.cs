@@ -67,5 +67,7 @@ namespace BookingSystem.Presistance.Repositories
                     src = src.Where(predicate).Include(include);
             return src.FirstAsync(predicate);
         }
+        public async Task DeleteRangeAsync(IEnumerable<TEntity> entities)
+            => await Task.Run(() => _entities.RemoveRange(entities));
     }
 }

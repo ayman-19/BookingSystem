@@ -371,6 +371,9 @@
       "BookingSystem.DTOs/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "BookingSystem.Domain": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/BookingSystem.DTOs.dll": {}
         },
@@ -1076,5 +1079,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Error occurred while getting package vulnerability data: The download of 'https://api.nuget.org/v3-vulnerabilities/2024.04.18.07.01.18/vulnerability.base.json' timed out because no data was received for 60000ms."
+    }
+  ]
 }

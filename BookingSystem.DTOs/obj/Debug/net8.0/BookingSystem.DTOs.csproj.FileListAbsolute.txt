@@ -1,11 +1,15 @@
 E:\Projects\BookingSystem\BookingSystem.DTOs\bin\Debug\net8.0\BookingSystem.DTOs.deps.json
 E:\Projects\BookingSystem\BookingSystem.DTOs\bin\Debug\net8.0\BookingSystem.DTOs.dll
 E:\Projects\BookingSystem\BookingSystem.DTOs\bin\Debug\net8.0\BookingSystem.DTOs.pdb
+E:\Projects\BookingSystem\BookingSystem.DTOs\bin\Debug\net8.0\BookingSystem.Domain.dll
+E:\Projects\BookingSystem\BookingSystem.DTOs\bin\Debug\net8.0\BookingSystem.Domain.pdb
+E:\Projects\BookingSystem\BookingSystem.DTOs\obj\Debug\net8.0\BookingSystem.DTOs.csproj.AssemblyReference.cache
 E:\Projects\BookingSystem\BookingSystem.DTOs\obj\Debug\net8.0\BookingSystem.DTOs.GeneratedMSBuildEditorConfig.editorconfig
 E:\Projects\BookingSystem\BookingSystem.DTOs\obj\Debug\net8.0\BookingSystem.DTOs.AssemblyInfoInputs.cache
 E:\Projects\BookingSystem\BookingSystem.DTOs\obj\Debug\net8.0\BookingSystem.DTOs.AssemblyInfo.cs
 E:\Projects\BookingSystem\BookingSystem.DTOs\obj\Debug\net8.0\BookingSystem.DTOs.csproj.CoreCompileInputs.cache
 E:\Projects\BookingSystem\BookingSystem.DTOs\obj\Debug\net8.0\BookingSystem.DTOs.sourcelink.json
+E:\Projects\BookingSystem\BookingSystem.DTOs\obj\Debug\net8.0\BookingS.BF9F5753.Up2Date
 E:\Projects\BookingSystem\BookingSystem.DTOs\obj\Debug\net8.0\BookingSystem.DTOs.dll
 E:\Projects\BookingSystem\BookingSystem.DTOs\obj\Debug\net8.0\refint\BookingSystem.DTOs.dll
 E:\Projects\BookingSystem\BookingSystem.DTOs\obj\Debug\net8.0\BookingSystem.DTOs.pdb

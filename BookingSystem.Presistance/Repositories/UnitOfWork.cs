@@ -10,7 +10,7 @@ namespace BookingSystem.Presistance.Repositories
         private readonly IDbContextTransaction _dbContextTransaction;
 
         public UnitOfWork(BookingDbContext context, IUserRepository users,
-            IReservationRepository reservations, IRoomRepository rooms, IFloorRepository floors, ICategoryRepository categories, IProductRepository products)
+            IReservationRepository reservations, IRoomRepository rooms, IFloorRepository floors, ICategoryRepository categories, IProductRepository products, IFoodRepository foods)
         {
             _context = context;
             _dbContextTransaction = _context.Database.BeginTransaction();
@@ -20,6 +20,7 @@ namespace BookingSystem.Presistance.Repositories
             Floors = floors;
             Categories = categories;
             Products = products;
+            Foods = foods;
         }
         public IUserRepository Users { get; set; }
         public IReservationRepository Reservations { get; set; }
@@ -27,6 +28,7 @@ namespace BookingSystem.Presistance.Repositories
         public IFloorRepository Floors { get; set; }
         public ICategoryRepository Categories { get; set; }
         public IProductRepository Products { get; set; }
+        public IFoodRepository Foods { get; set; }
 
         public Task CommitAsync() => _dbContextTransaction.CommitAsync();
 

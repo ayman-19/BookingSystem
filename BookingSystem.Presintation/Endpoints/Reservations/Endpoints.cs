@@ -1,4 +1,5 @@
 ﻿using BookingSystem.Application.Feature.Reservation.Commands.Request;
+using BookingSystem.Application.Feature.Reservation.Queries.Request;
 using BookingSystem.DTOs.Reservation;
 using MediatR;
 
@@ -20,6 +21,16 @@ namespace BookingSystem.Presintation.Endpoints.Reservations
             map.MapDelete("DeleteAsync/{id}", async (int id, ISender _sender) =>
             {
                 return await _sender.Send(new DeleteRequest(id));
+            });
+
+            map.MapGet("GetAllAsync", async (ISender _sender) =>
+            {
+                return await _sender.Send(new GetAllRequest());
+            });
+
+            map.MapGet("GetByAsync/{id}", async (int id, ISender _sender) =>
+            {
+                return await _sender.Send(new GetByIdRequest(id));
             });
         }
     }

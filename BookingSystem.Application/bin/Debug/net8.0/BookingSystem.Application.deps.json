@@ -245,6 +245,9 @@
         }
       },
       "BookingSystem.DTOs/1.0.0": {
+        "dependencies": {
+          "BookingSystem.Domain": "1.0.0"
+        },
         "runtime": {
           "BookingSystem.DTOs.dll": {}
         }

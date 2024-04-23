@@ -23,6 +23,7 @@ namespace BookingSystem.Application.Feature.Reservation.Commands.Handler
             {
                 var reverse = await _unitOfWork.Reservations.GetAsync(re => re.Id == request.id);
                 await _unitOfWork.Reservations.DeleteAsync(reverse);
+                await _unitOfWork.Rooms.MakeRoomIsNotBookedByReservationAsync(reverse.Id);
                 await _unitOfWork.SaveChanges();
                 await _unitOfWork.CommitAsync();
                 return _mapper.Map<ReservationQuery>(reverse);

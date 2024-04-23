@@ -1,8 +1,28 @@
 {
   "version": 2,
-  "dgSpecHash": "pHtwNe8xrX82Nxml6nFVS9A+ujV1P0OCg9+AUFIrEpda7jiTI4XQaS2/sBFzNklsUAH8uSeI6L+8VniSmAnDTA==",
+  "dgSpecHash": "ql7rVf+VPRHYKIeorg5+1lHZ0c6YM8l1idXYgCbvytkApIMBiEghQAq1L1tntBvhwiEb+Fvrmx3DRPu00sVfiw==",
   "success": true,
   "projectFilePath": "E:\\Projects\\BookingSystem\\BookingSystem.DTOs\\BookingSystem.DTOs.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
+  "expectedPackageFiles": [
+    "C:\\Users\\newzb\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.3\\microsoft.aspnetcore.cryptography.internal.8.0.3.nupkg.sha512",
+    "C:\\Users\\newzb\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\8.0.3\\microsoft.aspnetcore.cryptography.keyderivation.8.0.3.nupkg.sha512",
+    "C:\\Users\\newzb\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.3\\microsoft.entityframeworkcore.abstractions.8.0.3.nupkg.sha512",
+    "C:\\Users\\newzb\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\8.0.0\\microsoft.extensions.caching.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\newzb\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.0\\microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
+    "C:\\Users\\newzb\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\newzb\\.nuget\\packages\\microsoft.extensions.identity.core\\8.0.3\\microsoft.extensions.identity.core.8.0.3.nupkg.sha512",
+    "C:\\Users\\newzb\\.nuget\\packages\\microsoft.extensions.identity.stores\\8.0.3\\microsoft.extensions.identity.stores.8.0.3.nupkg.sha512",
+    "C:\\Users\\newzb\\.nuget\\packages\\microsoft.extensions.logging\\8.0.0\\microsoft.extensions.logging.8.0.0.nupkg.sha512",
+    "C:\\Users\\newzb\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\newzb\\.nuget\\packages\\microsoft.extensions.options\\8.0.2\\microsoft.extensions.options.8.0.2.nupkg.sha512",
+    "C:\\Users\\newzb\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Error occurred while getting package vulnerability data: The download of 'https://api.nuget.org/v3-vulnerabilities/2024.04.18.07.01.18/vulnerability.base.json' timed out because no data was received for 60000ms."
+    }
+  ]
 }

@@ -4,7 +4,7 @@ using FluentValidation;
 
 namespace BookingSystem.Application.Feature.Reservation.Commands.Validation
 {
-    internal class UpdateValidation : AbstractValidator<UpdateRequest>
+    public class UpdateValidation : AbstractValidator<UpdateRequest>
     {
         private readonly IUnitOfWork _unitOfWork;
         public UpdateValidation(IUnitOfWork unitOfWork)
@@ -15,6 +15,11 @@ namespace BookingSystem.Application.Feature.Reservation.Commands.Validation
 
         private void CustomValidation()
         {
+            RuleFor(r => r.id)
+              .NotEmpty().WithMessage("Id Not Empty")
+               .NotNull().WithMessage("Id Not Null")
+               .MustAsync(async (id, CancellationToken) => await _unitOfWork.Reservations.IsAnyExistAsync(r => r.Id == id)).WithMessage("Reservation Is Not Exist");
+
             RuleFor(re => re.Command.Date)
                 .NotEmpty().WithMessage("Date Not Empty")
                 .NotNull().WithMessage("Date Not Null");

@@ -41,15 +41,23 @@ namespace BookingSystem.Presintation.Endpoints.User
             map.MapGet("/SendResetPasswordCodeAsync", async (string email, ISender _sender) =>
             {
                 return await _sender.Send(new SendResetPasswordCodeRequest(email));
-            }).RequireAuthorization();
+            });
             map.MapGet("/ResetPasswordAysnc", async (string newPassword, string code, ISender _sender) =>
             {
                 return await _sender.Send(new ResetPasswordRequest(newPassword, code));
             }).RequireAuthorization();
-            map.MapDelete("/DeleteUserAysnc", async (string userId, ISender _sender) =>
+            map.MapDelete("/DeleteAysnc", async (string userId, ISender _sender) =>
             {
                 await _sender.Send(new DeleteUserRequest(userId));
-            }).RequireAuthorization("Per");
+            });
+            map.MapPut("/ReservationAysnc/{reservedId}", async (int reservedId, ISender _sender) =>
+            {
+                await _sender.Send(new ReservedRequest(reservedId));
+            });
+            map.MapGet("/GetByIdAysnc", async (string userId, ISender _sender) =>
+            {
+                await _sender.Send(new GetByIdRequest(userId));
+            });
         }
     }
 }

@@ -227,6 +227,9 @@ namespace BookingSystem.Presistance.Migrations
                     b.Property<int?>("ReservationId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("RoomId")
+                        .HasColumnType("int");
+
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
@@ -248,6 +251,10 @@ namespace BookingSystem.Presistance.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.HasIndex("ReservationId");
+
+                    b.HasIndex("RoomId")
+                        .IsUnique()
+                        .HasFilter("[RoomId] IS NOT NULL");
 
                     b.ToTable("Users", (string)null);
                 });
@@ -281,15 +288,15 @@ namespace BookingSystem.Presistance.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "ae3f4330-f1ba-4973-88b9-dc8dec714e15",
-                            ConcurrencyStamp = "91be9c30-f1ad-49e9-9d8a-f38b1bea5f7b",
+                            Id = "811cc63d-7552-4746-bad0-56998247f31c",
+                            ConcurrencyStamp = "20225d57-202a-4bf0-a587-743204fef86d",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "e92e1e7a-1432-4908-84de-1ff331dce60d",
-                            ConcurrencyStamp = "0d19be3f-82d2-4fc9-81e7-2443e70b8529",
+                            Id = "f6d5ef20-b526-41d7-a423-ea866c469357",
+                            ConcurrencyStamp = "31bcd87e-10c7-42f4-b6f7-7fe2881d36c0",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -454,6 +461,10 @@ namespace BookingSystem.Presistance.Migrations
                         .WithMany("Users")
                         .HasForeignKey("ReservationId");
 
+                    b.HasOne("BookingSystem.Domain.Model.Room", "Room")
+                        .WithOne("User")
+                        .HasForeignKey("BookingSystem.Domain.Model.User", "RoomId");
+
                     b.OwnsMany("BookingSystem.Domain.Model.RefreshToken", "RefreshTokens", b1 =>
                         {
                             b1.Property<string>("UserId")
@@ -496,6 +507,8 @@ namespace BookingSystem.Presistance.Migrations
                     b.Navigation("RefreshTokens");
 
                     b.Navigation("Reservation");
+
+                    b.Navigation("Room");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -574,6 +587,8 @@ namespace BookingSystem.Presistance.Migrations
             modelBuilder.Entity("BookingSystem.Domain.Model.Room", b =>
                 {
                     b.Navigation("Foods");
+
+                    b.Navigation("User");
                 });
 #pragma warning restore 612, 618
         }
