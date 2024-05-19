@@ -7,6 +7,7 @@ using BookingSystem.Presistance.Helper;
 using BookingSystem.Presistance.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.Routing;
@@ -56,6 +57,7 @@ namespace BookingSystem.Presistance.Dependancies
             services.AddAuthentication();
             services.AddSingleton<IAuthorizationHandler, PermissionHandler>();
             services.AddSingleton<IAuthorizationPolicyProvider, PermissionPolicyProvider>();
+            services.AddSingleton(nameof(IEmailSender));
             return services;
         }
     }

@@ -26,7 +26,6 @@ namespace BookingSystem.Presistance.Authentication
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly SignInManager<User> _signInManager;
         private readonly IEmailService _emailService;
-
         public Account(IUnitOfWork unitOfWork, UserManager<User> userManager, SignInManager<User> signInManager, IOptionsMonitor<jWTSettings> jWt, IEmailService emailService, IDataProtectionProvider provider, IConfiguration cofig, RoleManager<IdentityRole> roleManager)
         {
             _unitOfWork = unitOfWork;
@@ -128,6 +127,7 @@ namespace BookingSystem.Presistance.Authentication
                     strBuilder.Append(error.Description);
                 return strBuilder.ToString();
             }
+            user.ConfirmCreation = DateTime.Now;
             await _unitOfWork.CommitAsync();
             return "Email is Confirmed";
         }
@@ -297,5 +297,6 @@ namespace BookingSystem.Presistance.Authentication
         }
         private async Task<string> GetTokenForUser(string userId)
             => (await _unitOfWork.Users.GetAsync(u => u.Id == userId)).RefreshTokens.First(re => re.IsValid).AccessToken;
+
     }
 }

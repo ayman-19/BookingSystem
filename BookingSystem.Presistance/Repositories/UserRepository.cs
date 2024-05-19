@@ -22,6 +22,16 @@ namespace BookingSystem.Presistance.Repositories
                 .Where(u => u.Id == userId)
                 .ExecuteUpdateAsync(exc => exc.SetProperty(prop => prop.ReservationId, reserveId));
 
+        public void RemoveCallback(object state)
+        {
+            lock (_context)
+            {
+                if (_context.Users.Any(u => u.ConfirmCreation == null && u.Creation.AddMinutes(2) <= DateTime.Now))
+                    _context.Users.Where(u => u.ConfirmCreation == null && u.Creation.AddMinutes(2) <= DateTime.Now)
+                        .ExecuteDelete();
+            }
+        }
+
         public async Task SetRoomIdAsync(string id, int roomId)
             => await _context.Users.Where(u => u.Id == id).ExecuteUpdateAsync(prop => prop.SetProperty(up => up.RoomId, roomId));
     }

@@ -696,13 +696,7 @@
     "HttpMethod": "DELETE",
     "IsController": false,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "userId",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": [
       {
         "Type": "System.Void",
@@ -718,13 +712,7 @@
     "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "userId",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": [
       {
         "Type": "System.Void",
@@ -828,18 +816,7 @@
     "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "newPassword",
-        "Type": "System.String",
-        "IsRequired": true
-      },
-      {
-        "Name": "code",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": [
       {
         "Type": "System.String",
@@ -873,13 +850,7 @@
     "HttpMethod": "GET",
     "IsController": false,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "email",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": [
       {
         "Type": "System.String",

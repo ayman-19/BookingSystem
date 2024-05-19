@@ -4,19 +4,16 @@ using BookingSystem.Presistance.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace BookingSystem.Presistance.Migrations
+namespace BookingSystem.Presistance.Data.Migrations
 {
     [DbContext(typeof(BookingDbContext))]
-    [Migration("20240422094943_addrelation")]
-    partial class addrelation
+    partial class BookingDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -94,6 +91,9 @@ namespace BookingSystem.Presistance.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
@@ -187,7 +187,10 @@ namespace BookingSystem.Presistance.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("DeletedOn")
+                    b.Property<DateTime?>("ConfirmCreation")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("Creation")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
@@ -195,9 +198,6 @@ namespace BookingSystem.Presistance.Migrations
                         .HasColumnType("nvarchar(256)");
 
                     b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
                     b.Property<bool>("LockoutEnabled")
@@ -291,15 +291,15 @@ namespace BookingSystem.Presistance.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "811cc63d-7552-4746-bad0-56998247f31c",
-                            ConcurrencyStamp = "20225d57-202a-4bf0-a587-743204fef86d",
+                            Id = "033f86a7-cc88-4d90-8746-8d03f3b865a2",
+                            ConcurrencyStamp = "86ea7c84-e670-487e-9349-0ce30f5b6efc",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "f6d5ef20-b526-41d7-a423-ea866c469357",
-                            ConcurrencyStamp = "31bcd87e-10c7-42f4-b6f7-7fe2881d36c0",
+                            Id = "944571af-4135-48f3-b1a0-ba4fb193251e",
+                            ConcurrencyStamp = "54fe87a6-b2d8-4b4b-bfc3-454ede18ec5f",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });

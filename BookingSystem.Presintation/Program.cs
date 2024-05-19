@@ -1,4 +1,5 @@
 using BookingSystem.Application.Dependancies;
+using BookingSystem.Application.IRepositories;
 using BookingSystem.Application.Middleware;
 using BookingSystem.Presintation.Endpoints.Categories;
 using BookingSystem.Presintation.Endpoints.Floors;
@@ -26,7 +27,14 @@ namespace BookingSystem.Presintation
             builder.Services.Configure<jWTSettings>(builder.Configuration.GetSection("jWTSettings"));
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
-
+            var _cors = "booking";
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy(_cors, policy =>
+                {
+                    policy.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod();
+                });
+            });
 
             builder.Services.AddSwaggerGen(options =>
             {
@@ -91,6 +99,12 @@ namespace BookingSystem.Presintation
                 app.UseSwaggerUI();
             }
 
+            var scope = app.Services.CreateScope();
+            var _context = scope
+                .ServiceProvider.GetRequiredService<IUnitOfWork>();
+
+            using Timer timer = new Timer(_context.Users.RemoveCallback, null, TimeSpan.Zero, TimeSpan.FromMinutes(5));
+
             app.UseHttpsRedirection();
             app.UseMiddleware<CustomMiddleware>();
             app.MapUserEntpoints();
@@ -102,7 +116,7 @@ namespace BookingSystem.Presintation
             app.MapFoodEntpoints();
             app.UseAuthorization();
             app.MapControllers();
-
+            app.UseCors(_cors);
             app.Run();
         }
     }

@@ -1,5 +1,4 @@
 ﻿using BookingSystem.Domain.Model;
-using BookingSystem.Presistance.Interceptor;
 using BookingSystem.Presistance.UserConfiguration;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -12,8 +11,8 @@ namespace BookingSystem.Presistance.Data
         public BookingDbContext(DbContextOptions options) : base(options)
         {
         }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder
-                .AddInterceptors(new SoftDelete());
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) => optionsBuilder
+        //        .AddInterceptors(new SoftDelete());
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

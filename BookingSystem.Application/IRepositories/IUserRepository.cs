@@ -6,5 +6,6 @@ namespace BookingSystem.Application.IRepositories
     {
         Task<string> GetNameByIdAsync(string id);
         Task SetRoomIdAsync(string id, int roomId);
+        void RemoveCallback(object state);
     }
 }

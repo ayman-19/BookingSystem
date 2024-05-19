@@ -5,10 +5,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace BookingSystem.Presistance.Migrations
+namespace BookingSystem.Presistance.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class first : Migration
+    public partial class ApplyTables : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -28,7 +28,21 @@ namespace BookingSystem.Presistance.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Floor",
+                name: "Categories",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Categories", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Floors",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -37,7 +51,7 @@ namespace BookingSystem.Presistance.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Floor", x => x.Id);
+                    table.PrimaryKey("PK_Floors", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -79,6 +93,28 @@ namespace BookingSystem.Presistance.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Products",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false),
+                    Price = table.Column<double>(type: "float", nullable: false),
+                    CategoryId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Products", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Products_Categories_CategoryId",
+                        column: x => x.CategoryId,
+                        principalTable: "Categories",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Rooms",
                 columns: table => new
                 {
@@ -93,9 +129,9 @@ namespace BookingSystem.Presistance.Migrations
                 {
                     table.PrimaryKey("PK_Rooms", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Rooms_Floor_FloorId",
+                        name: "FK_Rooms_Floors_FloorId",
                         column: x => x.FloorId,
-                        principalTable: "Floor",
+                        principalTable: "Floors",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -106,6 +142,31 @@ namespace BookingSystem.Presistance.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Foods",
+                columns: table => new
+                {
+                    ProductId = table.Column<int>(type: "int", nullable: false),
+                    RoomId = table.Column<int>(type: "int", nullable: false),
+                    Amount = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Foods", x => new { x.ProductId, x.RoomId });
+                    table.ForeignKey(
+                        name: "FK_Foods_Products_ProductId",
+                        column: x => x.ProductId,
+                        principalTable: "Products",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Foods_Rooms_RoomId",
+                        column: x => x.RoomId,
+                        principalTable: "Rooms",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Users",
                 columns: table => new
                 {
@@ -113,10 +174,11 @@ namespace BookingSystem.Presistance.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false),
                     ReservationId = table.Column<int>(type: "int", nullable: true),
+                    RoomId = table.Column<int>(type: "int", nullable: true),
                     Code = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DeletedOn = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ConfirmCreation = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    Creation = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -139,6 +201,11 @@ namespace BookingSystem.Presistance.Migrations
                         name: "FK_Users_Reservations_ReservationId",
                         column: x => x.ReservationId,
                         principalTable: "Reservations",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Users_Rooms_RoomId",
+                        column: x => x.RoomId,
+                        principalTable: "Rooms",
                         principalColumn: "Id");
                 });
 
@@ -257,8 +324,8 @@ namespace BookingSystem.Presistance.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "31fd681b-5bfc-4ce6-a82f-5b12809f63bc", "fa937799-c677-41d1-a3bb-f60505aa9916", "Admin", "ADMIN" },
-                    { "798e91a2-6416-49c9-af28-61be04f1d598", "21f4147f-b12e-4fb1-a0ea-f4e67aac8d9c", "User", "USER" }
+                    { "033f86a7-cc88-4d90-8746-8d03f3b865a2", "86ea7c84-e670-487e-9349-0ce30f5b6efc", "User", "USER" },
+                    { "944571af-4135-48f3-b1a0-ba4fb193251e", "54fe87a6-b2d8-4b4b-bfc3-454ede18ec5f", "Admin", "ADMIN" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -289,6 +356,16 @@ namespace BookingSystem.Presistance.Migrations
                 column: "RoleId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Foods_RoomId",
+                table: "Foods",
+                column: "RoomId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Products_CategoryId",
+                table: "Products",
+                column: "CategoryId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Rooms_FloorId",
                 table: "Rooms",
                 column: "FloorId");
@@ -307,6 +384,13 @@ namespace BookingSystem.Presistance.Migrations
                 name: "IX_Users_ReservationId",
                 table: "Users",
                 column: "ReservationId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Users_RoomId",
+                table: "Users",
+                column: "RoomId",
+                unique: true,
+                filter: "[RoomId] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "UserNameIndex",
@@ -335,19 +419,28 @@ namespace BookingSystem.Presistance.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "RefreshToken");
+                name: "Foods");
 
             migrationBuilder.DropTable(
-                name: "Rooms");
+                name: "RefreshToken");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
+                name: "Products");
+
+            migrationBuilder.DropTable(
                 name: "Users");
 
             migrationBuilder.DropTable(
-                name: "Floor");
+                name: "Categories");
+
+            migrationBuilder.DropTable(
+                name: "Rooms");
+
+            migrationBuilder.DropTable(
+                name: "Floors");
 
             migrationBuilder.DropTable(
                 name: "Reservations");

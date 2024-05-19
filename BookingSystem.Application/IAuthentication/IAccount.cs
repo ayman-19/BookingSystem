@@ -14,7 +14,7 @@ namespace BookingSystem.Application.IAuthentication
         Task<int> DeleteUserAsync(string userId);
         Task<string> AddRoleAsync(string role);
         Task<string> RemoveRoleAsync(string role);
-        Task AddRoleToUserAsync(string role, string userId);
+        Task<string> AddRoleToUserAsync(string role, string userId);
         Task AddPermissionAsync(string permission);
     }
 }
