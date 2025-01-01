@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Projects\\BookingSystem\\BookingSystem.Presintation\\BookingSystem.Presintation.csproj": {}
+    "D:\\BoockingSystem\\BookingSystem.Presintation\\BookingSystem.Presintation.csproj": {}
   },
   "projects": {
-    "E:\\Projects\\BookingSystem\\BookingSystem.Application\\BookingSystem.Application.csproj": {
+    "D:\\BoockingSystem\\BookingSystem.Application\\BookingSystem.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Projects\\BookingSystem\\BookingSystem.Application\\BookingSystem.Application.csproj",
+        "projectUniqueName": "D:\\BoockingSystem\\BookingSystem.Application\\BookingSystem.Application.csproj",
         "projectName": "BookingSystem.Application",
-        "projectPath": "E:\\Projects\\BookingSystem\\BookingSystem.Application\\BookingSystem.Application.csproj",
-        "packagesPath": "C:\\Users\\newzb\\.nuget\\packages\\",
-        "outputPath": "E:\\Projects\\BookingSystem\\BookingSystem.Application\\obj\\",
+        "projectPath": "D:\\BoockingSystem\\BookingSystem.Application\\BookingSystem.Application.csproj",
+        "packagesPath": "C:\\Users\\Ayman\\.nuget\\packages\\",
+        "outputPath": "D:\\BoockingSystem\\BookingSystem.Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\newzb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ayman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,17 +26,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\Projects\\BookingSystem\\BookingSystem.Domain\\BookingSystem.Domain.csproj": {
-                "projectPath": "E:\\Projects\\BookingSystem\\BookingSystem.Domain\\BookingSystem.Domain.csproj"
+              "D:\\BoockingSystem\\BookingSystem.Domain\\BookingSystem.Domain.csproj": {
+                "projectPath": "D:\\BoockingSystem\\BookingSystem.Domain\\BookingSystem.Domain.csproj"
               },
-              "E:\\Projects\\BookingSystem\\BookingSystem.DTOs\\BookingSystem.DTOs.csproj": {
-                "projectPath": "E:\\Projects\\BookingSystem\\BookingSystem.DTOs\\BookingSystem.DTOs.csproj"
+              "D:\\BoockingSystem\\BookingSystem.DTOs\\BookingSystem.DTOs.csproj": {
+                "projectPath": "D:\\BoockingSystem\\BookingSystem.DTOs\\BookingSystem.DTOs.csproj"
               }
             }
           }
@@ -46,7 +51,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -89,21 +95,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Projects\\BookingSystem\\BookingSystem.Domain\\BookingSystem.Domain.csproj": {
+    "D:\\BoockingSystem\\BookingSystem.Domain\\BookingSystem.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Projects\\BookingSystem\\BookingSystem.Domain\\BookingSystem.Domain.csproj",
+        "projectUniqueName": "D:\\BoockingSystem\\BookingSystem.Domain\\BookingSystem.Domain.csproj",
         "projectName": "BookingSystem.Domain",
-        "projectPath": "E:\\Projects\\BookingSystem\\BookingSystem.Domain\\BookingSystem.Domain.csproj",
-        "packagesPath": "C:\\Users\\newzb\\.nuget\\packages\\",
-        "outputPath": "E:\\Projects\\BookingSystem\\BookingSystem.Domain\\obj\\",
+        "projectPath": "D:\\BoockingSystem\\BookingSystem.Domain\\BookingSystem.Domain.csproj",
+        "packagesPath": "C:\\Users\\Ayman\\.nuget\\packages\\",
+        "outputPath": "D:\\BoockingSystem\\BookingSystem.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\newzb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ayman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -111,6 +121,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -128,7 +139,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -159,21 +171,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Projects\\BookingSystem\\BookingSystem.DTOs\\BookingSystem.DTOs.csproj": {
+    "D:\\BoockingSystem\\BookingSystem.DTOs\\BookingSystem.DTOs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Projects\\BookingSystem\\BookingSystem.DTOs\\BookingSystem.DTOs.csproj",
+        "projectUniqueName": "D:\\BoockingSystem\\BookingSystem.DTOs\\BookingSystem.DTOs.csproj",
         "projectName": "BookingSystem.DTOs",
-        "projectPath": "E:\\Projects\\BookingSystem\\BookingSystem.DTOs\\BookingSystem.DTOs.csproj",
-        "packagesPath": "C:\\Users\\newzb\\.nuget\\packages\\",
-        "outputPath": "E:\\Projects\\BookingSystem\\BookingSystem.DTOs\\obj\\",
+        "projectPath": "D:\\BoockingSystem\\BookingSystem.DTOs\\BookingSystem.DTOs.csproj",
+        "packagesPath": "C:\\Users\\Ayman\\.nuget\\packages\\",
+        "outputPath": "D:\\BoockingSystem\\BookingSystem.DTOs\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\newzb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ayman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -181,14 +197,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\Projects\\BookingSystem\\BookingSystem.Domain\\BookingSystem.Domain.csproj": {
-                "projectPath": "E:\\Projects\\BookingSystem\\BookingSystem.Domain\\BookingSystem.Domain.csproj"
+              "D:\\BoockingSystem\\BookingSystem.Domain\\BookingSystem.Domain.csproj": {
+                "projectPath": "D:\\BoockingSystem\\BookingSystem.Domain\\BookingSystem.Domain.csproj"
               }
             }
           }
@@ -202,7 +219,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -223,21 +241,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Projects\\BookingSystem\\BookingSystem.Presintation\\BookingSystem.Presintation.csproj": {
+    "D:\\BoockingSystem\\BookingSystem.Presintation\\BookingSystem.Presintation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Projects\\BookingSystem\\BookingSystem.Presintation\\BookingSystem.Presintation.csproj",
+        "projectUniqueName": "D:\\BoockingSystem\\BookingSystem.Presintation\\BookingSystem.Presintation.csproj",
         "projectName": "BookingSystem.Presintation",
-        "projectPath": "E:\\Projects\\BookingSystem\\BookingSystem.Presintation\\BookingSystem.Presintation.csproj",
-        "packagesPath": "C:\\Users\\newzb\\.nuget\\packages\\",
-        "outputPath": "E:\\Projects\\BookingSystem\\BookingSystem.Presintation\\obj\\",
+        "projectPath": "D:\\BoockingSystem\\BookingSystem.Presintation\\BookingSystem.Presintation.csproj",
+        "packagesPath": "C:\\Users\\Ayman\\.nuget\\packages\\",
+        "outputPath": "D:\\BoockingSystem\\BookingSystem.Presintation\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\newzb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ayman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -245,20 +267,21 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\Projects\\BookingSystem\\BookingSystem.Application\\BookingSystem.Application.csproj": {
-                "projectPath": "E:\\Projects\\BookingSystem\\BookingSystem.Application\\BookingSystem.Application.csproj"
+              "D:\\BoockingSystem\\BookingSystem.Application\\BookingSystem.Application.csproj": {
+                "projectPath": "D:\\BoockingSystem\\BookingSystem.Application\\BookingSystem.Application.csproj"
               },
-              "E:\\Projects\\BookingSystem\\BookingSystem.Domain\\BookingSystem.Domain.csproj": {
-                "projectPath": "E:\\Projects\\BookingSystem\\BookingSystem.Domain\\BookingSystem.Domain.csproj"
+              "D:\\BoockingSystem\\BookingSystem.Domain\\BookingSystem.Domain.csproj": {
+                "projectPath": "D:\\BoockingSystem\\BookingSystem.Domain\\BookingSystem.Domain.csproj"
               },
-              "E:\\Projects\\BookingSystem\\BookingSystem.Presistance\\BookingSystem.Presistance.csproj": {
-                "projectPath": "E:\\Projects\\BookingSystem\\BookingSystem.Presistance\\BookingSystem.Presistance.csproj"
+              "D:\\BoockingSystem\\BookingSystem.Presistance\\BookingSystem.Presistance.csproj": {
+                "projectPath": "D:\\BoockingSystem\\BookingSystem.Presistance\\BookingSystem.Presistance.csproj"
               }
             }
           }
@@ -272,7 +295,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -318,21 +342,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Projects\\BookingSystem\\BookingSystem.Presistance\\BookingSystem.Presistance.csproj": {
+    "D:\\BoockingSystem\\BookingSystem.Presistance\\BookingSystem.Presistance.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Projects\\BookingSystem\\BookingSystem.Presistance\\BookingSystem.Presistance.csproj",
+        "projectUniqueName": "D:\\BoockingSystem\\BookingSystem.Presistance\\BookingSystem.Presistance.csproj",
         "projectName": "BookingSystem.Presistance",
-        "projectPath": "E:\\Projects\\BookingSystem\\BookingSystem.Presistance\\BookingSystem.Presistance.csproj",
-        "packagesPath": "C:\\Users\\newzb\\.nuget\\packages\\",
-        "outputPath": "E:\\Projects\\BookingSystem\\BookingSystem.Presistance\\obj\\",
+        "projectPath": "D:\\BoockingSystem\\BookingSystem.Presistance\\BookingSystem.Presistance.csproj",
+        "packagesPath": "C:\\Users\\Ayman\\.nuget\\packages\\",
+        "outputPath": "D:\\BoockingSystem\\BookingSystem.Presistance\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\newzb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Ayman\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -340,20 +368,21 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\Projects\\BookingSystem\\BookingSystem.Application\\BookingSystem.Application.csproj": {
-                "projectPath": "E:\\Projects\\BookingSystem\\BookingSystem.Application\\BookingSystem.Application.csproj"
+              "D:\\BoockingSystem\\BookingSystem.Application\\BookingSystem.Application.csproj": {
+                "projectPath": "D:\\BoockingSystem\\BookingSystem.Application\\BookingSystem.Application.csproj"
               },
-              "E:\\Projects\\BookingSystem\\BookingSystem.Domain\\BookingSystem.Domain.csproj": {
-                "projectPath": "E:\\Projects\\BookingSystem\\BookingSystem.Domain\\BookingSystem.Domain.csproj"
+              "D:\\BoockingSystem\\BookingSystem.Domain\\BookingSystem.Domain.csproj": {
+                "projectPath": "D:\\BoockingSystem\\BookingSystem.Domain\\BookingSystem.Domain.csproj"
               },
-              "E:\\Projects\\BookingSystem\\BookingSystem.DTOs\\BookingSystem.DTOs.csproj": {
-                "projectPath": "E:\\Projects\\BookingSystem\\BookingSystem.DTOs\\BookingSystem.DTOs.csproj"
+              "D:\\BoockingSystem\\BookingSystem.DTOs\\BookingSystem.DTOs.csproj": {
+                "projectPath": "D:\\BoockingSystem\\BookingSystem.DTOs\\BookingSystem.DTOs.csproj"
               }
             }
           }
@@ -367,7 +396,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -418,7 +448,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

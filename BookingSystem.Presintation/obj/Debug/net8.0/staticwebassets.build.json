@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "rYfo/4tU8Dwxa8WMDZQM/TY91JPdKj9BLOeQBjftIc8=",
+  "Hash": "8SowFfHf/qN6zfpmBPyVWCxk2HwrbWF30Yw5v0gUp7I=",
   "Source": "BookingSystem.Presintation",
   "BasePath": "_content/BookingSystem.Presintation",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

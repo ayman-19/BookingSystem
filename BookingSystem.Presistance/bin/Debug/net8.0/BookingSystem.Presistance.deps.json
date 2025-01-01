@@ -1254,7 +1254,10 @@
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0"
         },
         "runtime": {
-          "BookingSystem.Application.dll": {}
+          "BookingSystem.Application.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "BookingSystem.Domain/1.0.0": {
@@ -1263,7 +1266,10 @@
           "Microsoft.Extensions.Identity.Stores": "8.0.4"
         },
         "runtime": {
-          "BookingSystem.Domain.dll": {}
+          "BookingSystem.Domain.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "BookingSystem.DTOs/1.0.0": {
@@ -1271,7 +1277,10 @@
           "BookingSystem.Domain": "1.0.0"
         },
         "runtime": {
-          "BookingSystem.DTOs.dll": {}
+          "BookingSystem.DTOs.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

@@ -11,3 +11,16 @@ E:\Projects\BookingSystem\BookingSystem.Domain\obj\Debug\net8.0\BookingSystem.Do
 E:\Projects\BookingSystem\BookingSystem.Domain\obj\Debug\net8.0\refint\BookingSystem.Domain.dll
 E:\Projects\BookingSystem\BookingSystem.Domain\obj\Debug\net8.0\BookingSystem.Domain.pdb
 E:\Projects\BookingSystem\BookingSystem.Domain\obj\Debug\net8.0\ref\BookingSystem.Domain.dll
+D:\BoockingSystem\BookingSystem.Domain\bin\Debug\net8.0\BookingSystem.Domain.deps.json
+D:\BoockingSystem\BookingSystem.Domain\bin\Debug\net8.0\BookingSystem.Domain.dll
+D:\BoockingSystem\BookingSystem.Domain\bin\Debug\net8.0\BookingSystem.Domain.pdb
+D:\BoockingSystem\BookingSystem.Domain\obj\Debug\net8.0\BookingSystem.Domain.csproj.AssemblyReference.cache
+D:\BoockingSystem\BookingSystem.Domain\obj\Debug\net8.0\BookingSystem.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\BoockingSystem\BookingSystem.Domain\obj\Debug\net8.0\BookingSystem.Domain.AssemblyInfoInputs.cache
+D:\BoockingSystem\BookingSystem.Domain\obj\Debug\net8.0\BookingSystem.Domain.AssemblyInfo.cs
+D:\BoockingSystem\BookingSystem.Domain\obj\Debug\net8.0\BookingSystem.Domain.csproj.CoreCompileInputs.cache
+D:\BoockingSystem\BookingSystem.Domain\obj\Debug\net8.0\BookingSystem.Domain.sourcelink.json
+D:\BoockingSystem\BookingSystem.Domain\obj\Debug\net8.0\BookingSystem.Domain.dll
+D:\BoockingSystem\BookingSystem.Domain\obj\Debug\net8.0\refint\BookingSystem.Domain.dll
+D:\BoockingSystem\BookingSystem.Domain\obj\Debug\net8.0\BookingSystem.Domain.pdb
+D:\BoockingSystem\BookingSystem.Domain\obj\Debug\net8.0\ref\BookingSystem.Domain.dll

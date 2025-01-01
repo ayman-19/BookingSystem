@@ -25,7 +25,7 @@ namespace BookingSystem.Presintation.Endpoints.Products
             map.MapGet("GetAllAsync", async (ISender _sender) =>
             {
                 return await _sender.Send(new GetAllRequest());
-            });
+            }).RequireRateLimiting("fixed-by-user");
             map.MapGet("GetByIdAsync/{id}", async (int id, ISender _sender) =>
             {
                 return await _sender.Send(new GetByIdRequest(id));

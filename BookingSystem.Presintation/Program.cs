@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
+using System.Threading.RateLimiting;
 
 namespace BookingSystem.Presintation
 {
@@ -90,6 +91,15 @@ namespace BookingSystem.Presintation
                     };
                 });
 
+            builder.Services.AddRateLimiter(opt =>
+            {
+                opt.AddPolicy("fixed-by-user", httpContext =>
+                RateLimitPartition.GetFixedWindowLimiter(partitionKey: "AA", factory: _ => new FixedWindowRateLimiterOptions
+                {
+                    PermitLimit = 2,
+                    Window = TimeSpan.FromMinutes(1)
+                }));
+            });
 
             var app = builder.Build();
 

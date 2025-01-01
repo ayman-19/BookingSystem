@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BookingSystem.Presistance")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0560e2025fce85ed1884aebfa24f87fea904124d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0f4315f67d357efe1bfcafdba621d0743e282e7a")]
 [assembly: System.Reflection.AssemblyProductAttribute("BookingSystem.Presistance")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BookingSystem.Presistance")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
